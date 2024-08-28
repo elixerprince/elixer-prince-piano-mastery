@@ -1,4 +1,5 @@
 .main-header {
+  align-items: center;
   background-image: linear-gradient(
       var(--primary-color-translucent),
       var(--primary-color-translucent)
@@ -9,8 +10,10 @@
   color: var(--header-color);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100dvh;
+  justify-content: center;
   padding: 32px;
+  text-align: center;
 
   .cta-btn {
     border: 4px solid var(--header-color);
@@ -20,5 +23,11 @@
     padding: 8px 16px;
     text-decoration: none;
     width: fit-content;
+  }
+}
+
+@media (width >= 768px) {
+  .main-header {
+    padding: 64px;
   }
 }
