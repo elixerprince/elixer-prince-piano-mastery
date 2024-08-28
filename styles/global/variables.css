@@ -1,10 +1,8 @@
-/* USER PREFERENCES */
-@media (prefers-reduced-motion: no-preference) {
-  * {
-    scroll-behavior: smooth;
-  }
-}
+/* 
+  TODO: Import an elegant font to replace the sans-serif 
+*/
 
+/* USER PREFERENCES */
 @media (prefers-color-scheme: dark) {
   :root {
     --primary-color: rgb(255, 255, 255);
@@ -27,34 +25,4 @@
   --brand-color: rgb(255, 255, 0);
   /* Fonts */
   --primary-font: sans-serif;
-}
-
-html {
-  font-family: var(--primary-font);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  font-size: 16px;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
-}
-
-/* TYPOGRAPHY */
-h1 {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-h3 {
-  font-size: 1.25rem;
-  font-weight: bold;
 }
