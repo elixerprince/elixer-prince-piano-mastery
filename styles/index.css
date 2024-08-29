@@ -1,11 +1,15 @@
 @import url("global/main.css");
 
 section {
-  padding: 16px 32px 32px;
+  padding: 1rem 2rem 2rem; /* Default padding for all sections */
 
-  .header {
+  .heading {
     text-align: center;
   }
+}
+
+.paragraph {
+  margin-bottom: 1rem;
 }
 
 .main-header {
@@ -17,81 +21,182 @@ section {
     url("../dist/images/piano-keys.webp");
   background-position: center;
   background-size: cover;
-  color: var(--header-color);
+  color: var(--header-white);
   display: flex;
   flex-direction: column;
   height: 100dvh;
   justify-content: center;
   min-height: fit-content;
-  padding: 32px;
+  padding: 2rem;
   text-align: center;
 
   .cta-btn {
-    border: 4px solid var(--header-color);
-    border-radius: 8px;
-    color: var(--header-color);
+    border: 0.25rem solid var(--header-white);
+    border-radius: 0.5rem;
+    color: var(--header-white);
     font-weight: 600;
-    padding: 16px 20px;
+    padding: 1rem 1.25rem;
+    position: relative;
+    margin-top: 1.25rem;
     text-decoration: none;
     width: fit-content;
-    margin-top: 20px;
+    z-index: 1;
+  }
+
+  .cta-btn::before {
+    background-color: var(--header-white-translucent);
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleX(0);
+    transition: transform 0.25s ease-in-out;
+    transform-origin: center right;
+    z-index: -1;
+  }
+
+  .cta-btn:hover::before {
+    transform-origin: center left;
+    transform: scaleX(1);
   }
 }
 
 .about-me-section {
   background-color: var(--secondary-color);
   color: var(--primary-color);
-  padding-top: 12px;
+  padding-top: 0.75rem;
   /* !Research good card layouts so that I can make these look better! */
 
-  .header {
+  .heading {
     background-color: var(--secondary-color);
     display: inline-block;
-    left: 48px;
-    padding: 0 16px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 1rem;
     position: relative;
-    top: 16px;
-  }
-
-  .my-picture {
-    aspect-ratio: 1 / 1;
-    border: 2px solid var(--primary-color);
-    border-radius: 50%;
-    display: block;
-    margin: 32px auto;
-    max-width: 100%;
-    object-fit: cover;
-    object-position: top;
-    width: 200px;
+    top: 2rem;
   }
 
   .details {
-    border: 2px solid var(--primary-color);
-    border-radius: 8px;
-    padding: 0 16px 16px;
+    background-color: var(--secondary-color);
+    border: 0.125rem solid var(--primary-color);
+    border-radius: 0.5rem;
+    padding: 0 1rem 1rem;
+
+    .my-picture {
+      aspect-ratio: 1 / 1;
+      border: 0.125rem solid var(--primary-color);
+      border-radius: 50%;
+      display: block;
+      margin: 2rem auto 1rem;
+      max-width: 100%;
+      object-fit: cover;
+      object-position: top;
+      width: 12.5rem;
+    }
+
+    .identity {
+      margin-bottom: 1.5rem;
+
+      .name {
+        display: block;
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+      .title {
+        color: var(--secondary-color-translucent);
+        font-size: 0.75rem;
+      }
+    }
   }
 }
 
 /* Medium Mobile */
-@media (width >= 375px) {
-}
+@media (width >= 23.4375rem) {
+  .about-me-section {
+    .details {
+      padding-bottom: 2rem;
 
-/* Large Mobile */
-@media (width >= 425px) {
+      .identity {
+        .name {
+          display: inline-block;
+        }
+      }
+    }
+  }
 }
 
 /* Tablet */
-@media (width >= 768px) {
+@media (width >= 48rem) {
+  .main-header {
+    padding: 4rem;
+
+    .cta {
+      font-size: 2.5rem;
+    }
+
+    .cta-btn {
+      margin-top: 2.5rem;
+    }
+  }
+
+  .about-me-section {
+    padding: 1rem 2.5rem 2.5rem;
+  }
 }
 
 /* Laptop */
 @media (width >= 1024px) {
+  .about-me-section {
+    .details {
+      position: absolute;
+      top: 30rem;
+      width: 35%;
+    }
+  }
 }
 
 /* Laptop Large */
-@media (width >= 1440px) {
+@media (width >= 90rem) {
+  .main-header {
+    padding: 4rem;
+
+    .cta {
+      font-size: 3rem;
+    }
+
+    .cta-btn {
+      font-size: 2.25rem;
+      margin-top: 3rem;
+    }
+  }
+
+  .about-me-section {
+    .details {
+      border: 0.25rem solid var(--primary-color);
+      top: 42rem;
+    }
+  }
 }
 
 /* 4K */
-@media (width >= 2550px) {
+@media (width >= 159.375rem) {
+  .main-header {
+    padding: 8rem;
+
+    .cta {
+      font-size: 6.5rem;
+    }
+
+    .cta-btn {
+      border: 0.8rem solid var(--header-color);
+      border-radius: 1.5rem;
+      font-size: 5rem;
+      margin-top: 5rem;
+      padding: 2rem 4rem;
+    }
+  }
 }
